@@ -15,8 +15,6 @@ class TaskFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(3),
-            'tasklists_id' => rand(0, 10),
-            'user_id' => rand(0, 10),
             'reminder_datetime' => $this->faker->date(),
             'due_date' => $this->faker->date(),
             'attachment_url' => 'https://google.com/attachment',

@@ -9,7 +9,6 @@ class Category extends Model
 {
     use HasFactory;
     
-    public function task(){
-        return $this->belongsToMany(Task::class);
-    }
+    protected $guarded = [];
+    
 }

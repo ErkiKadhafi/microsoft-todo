@@ -9,13 +9,18 @@ class Task extends Model
 {
     use HasFactory;
 
-    public function users() {
-        return $this->belongsTo(User::class);
+    protected $guarded = [];
+    
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
     public function taskList(){
-        return $this->belongsTo(TaskList::class);
+        return $this->belongsTo(TaskList::class, 'tasklist_id');
     }
-    public function subtask(){
+    public function subtasks(){
         return $this->hasMany(Subtask::class);
+    }
+    public function categories(){
+        return $this->belongsToMany(Category::class)->withTimestamps();
     }
 }

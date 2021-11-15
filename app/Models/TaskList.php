@@ -9,13 +9,15 @@ class TaskList extends Model
 {
     use HasFactory;
 
-    public function users() {
-        return $this->belongsTo(User::class);
+    protected $guarded = [];
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
-    public function colors(){
-        return $this->belongsTo(Color::class);
+    public function color(){
+        return $this->belongsTo(Color::class, 'color_id');
     }
-    public function task(){
-        return $this->hasMany(Task::class);
+    public function tasks(){
+        return $this->hasMany(Task::class, 'tasklist_id');
     }
 }

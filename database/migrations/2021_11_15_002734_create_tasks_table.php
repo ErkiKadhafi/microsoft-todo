@@ -15,7 +15,7 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tasklists_id');
+            $table->foreignId('tasklist_id');
             $table->foreignId('user_id');
             $table->string('name');
             $table->date('reminder_datetime');

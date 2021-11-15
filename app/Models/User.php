@@ -31,10 +31,10 @@ class User extends Authenticatable
     ];
 
 
-    public function taskList(){
-        return $this->hasMany(TaskList::class);
+    public function taskLists(){
+        return $this->hasMany(TaskList::class, 'user_id');
     }
-    public function task(){
+    public function tasks(){
         return $this->hasMany(Task::class);
     }
 }

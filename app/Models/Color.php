@@ -9,7 +9,9 @@ class Color extends Model
 {
     use HasFactory;
 
-    public function taskList(){
-        return $this->hasMany(TaskList::class);
+    protected $guarded = [];
+
+    public function taskLists(){
+        return $this->hasMany(TaskList::class, 'color_id');
     }
 }
